@@ -2,7 +2,9 @@ name: Publish docs via GitHub Pages
 on:
   push:
     branches:
-      - main
+      - master
+      - feature/*
+      - writer
 
 jobs:
   build:
@@ -12,11 +14,36 @@ jobs:
       - name: Checkout main
         uses: actions/checkout@v2
 
-      - name: Deploy docs
-        uses: mhausenblas/mkdocs-deploy-gh-pages@master
-        # Or use mhausenblas/mkdocs-deploy-gh-pages@nomaterial to build without the mkdocs-material theme
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          CUSTOM_DOMAIN: optionaldomain.com
-          CONFIG_FILE: folder/mkdocs.yml
-          EXTRA_PACKAGES: build-base
+      - name: Set up Python 3.x
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+          architecture: 'x64'
+
+      - name: Red Pill
+        if: github.ref == 'refs/heads/main'
+        run: |
+          echo "deploy_env=devx.pw" >> $GITHUB_ENV
+
+      - name: Blue Pill
+        if: github.ref != 'refs/heads/main'
+        run: |
+          echo "deploy_env=staging.devx.pw" >> $GITHUB_ENV
+
+      - name: Install mkdocs
+        run: |
+          pip install -r requirements.txt
+
+      - name: Build mkdocs
+        run: |
+          mkdocs build --clean
+          
+      - name: Deploy
+        run: |
+          git config user.name "Pablo Woolvett"
+          git config user.email "pablowoolvett@gmail.com"
+          mkdocs gh-deploy \
+            --clean \
+            --strict \
+            --force \
+            --remote-branch ${{ env.deploy_env }}

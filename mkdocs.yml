@@ -1,0 +1,105 @@
+site_name: Independent and Identically distributed Braindumps
+site_author: Pablo Woolvett
+
+repo_name: devx.pw
+repo_url: https://github.com/pwoolvett/devx.pw
+
+docs_dir: docs/src
+site_dir: docs/build
+
+theme:
+  name: material
+  custom_dir: docs/overrides
+  palette:
+    scheme: slate
+    primary: black
+    accent: deep purple
+  logo: 'img/logo.png'
+  favicon: 'img/logo.png'
+  features:
+  - search.suggest
+  - search.highlight
+
+  nav:
+  - Home: index.md
+  - Gists:
+      - gists/2020-10-07-tty-browser.md
+      - gists/blackini.md
+      - gists/empty-folders.md
+      - gists/github-pages-website.md
+      - gists/gstlaunch-bins.md
+  - Tutorials:
+      - tutorials/python-setup.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/pablowoolvett/
+    - icon: fontawesome/brands/docker
+      link: https://hub.docker.com/u/pwoolvett
+    - icon: fontawesome/brands/github
+      link: https://www.github.com/pwoolvett
+    - icon: fontawesome/brands/stack-exchange
+      link: https://stackexchange.com/users/6923219/pwoolvett
+    - icon: fontawesome/brands/python
+      link: https://pypi.org/user/pwoolvett
+    - icon: material/forum
+      link: https://forums.developer.nvidia.com/u/pwoolvett
+
+plugins:
+  - search
+  - img2fig
+markdown_extensions:
+  - markdown_include.include:
+      throwException: true
+      base_path: ''
+  - markdown.extensions.codehilite:
+      guess_lang: false
+  - meta
+  - admonition
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.progressbar
+  - pymdownx.details
+  - pymdownx.tabbed
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.arithmatex:
+      generic: true
+
+#   # - codehilite:
+#   #     guess_lang: false
+#   - toc:
+#       permalink: true
+#   - footnotes
+#   - pymdownx.arithmatex
+#   - pymdownx.betterem:
+#       smart_enable: all
+#   - pymdownx.caret
+#   - pymdownx.critic
+#   - pymdownx.details
+#   - pymdownx.emoji:
+#       emoji_generator: !!python/name:pymdownx.emoji.to_svg
+#   - pymdownx.inlinehilite
+#   - pymdownx.magiclink
+#   - pymdownx.mark
+#   - pymdownx.smartsymbols
+#   - pymdownx.superfences
+#   - pymdownx.tasklist:
+#       custom_checkbox: true
+#   - pymdownx.tilde
+#   - meta
+extra_javascript:
+  - js/termynal.js
+  - js/customTermynals.js
+  - js/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  # - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
+  # - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js
+extra_css:
+  - css/termynal.css
+  # - css/align.css
+  # - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css
