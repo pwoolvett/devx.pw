@@ -30,6 +30,7 @@ theme:
       - gists/gstlaunch-bins.md
   - Tutorials:
       - tutorials/python-setup.md
+      - tutorials/in-the-beginning.md
 
 extra:
   social:
