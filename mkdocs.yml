@@ -31,6 +31,7 @@ theme:
       - gists/coverage-py-editable.md
   - Tutorials:
       - tutorials/python-setup.md
+      - tutorials/python-setup-v2.md
       - tutorials/in-the-beginning.md
 
 extra:
