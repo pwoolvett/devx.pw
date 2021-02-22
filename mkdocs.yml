@@ -29,9 +29,11 @@ theme:
       - gists/github-pages-website.md
       - gists/gstlaunch-bins.md
       - gists/integrating-behave-into-pytest.md
+      - gists/coverage-py-editable.md
   - Tutorials:
       - tutorials/python-setup.md
       - tutorials/python-setup-v2.md
+      - tutorials/in-the-beginning.md
 
 extra:
   social:

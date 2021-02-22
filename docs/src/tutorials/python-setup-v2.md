@@ -146,3 +146,76 @@ that specific python is the first one found in $PATH.
 
 
 ## Managing Virtual Environments
+
+Your system probably has a python.
+Maybe two versions.
+Avoid using them or installing stuff using those `pip`.
+
+Instead, for each project you should use a different virtual environment.
+This avoids having dependency issues and makes it easier to reproduce.
+
+### The only exception
+
+There are some tools which should be installed on your system. The only one I recommend is `pipx`
+
+```python
+python3 -m pip install --user pipx
+```
+
+now pypi is an application store!
+
+### Install cross-project tools using pipx
+
+This ensures every executable has its own, isolated virtualenv.
+
+Go ahead and install poetry with this method.
+
+```python
+pipx install poetry
+```
+
+Whatever you find on pypi can be installed this way, so you could, for example:
+
+```python
+pipx install docker-compose
+```
+
+or
+
+```python
+pipx install youtube-dl
+```
+
+
+etc.
+
+
+
+### Actually Managing Venvs
+
+* python comes with a venv module
+* there's a virtualenv package 
+* pipx creates a venv for every 'app'
+* pyenv can manage virtual envs
+* poetry can manage virtual envs
+* pipenv (similar to poetry)
+* anaconda and friends also manage venvs
+
+Also, there's docker, virtual machines, tox, ...
+
+It does not matter how or which tool you use,
+just use virtual envs.
+
+Also, use poetry :wink:.
+
+So, you have a project which requires `python3.7`:
+
+```console
+pyenv install 3.7.x # this is required once, after this, that version will ve available to use in your system.
+# instead of x, press TAB and vhoose tha latest available
+
+pyenv local 3.7.x # ensure while in this directory that is what "python" is bound to
+poetry [install|shell|new|init|env] # the corresponding command for the project stage youre at
+```
+
+you can liat them with `poetry env --list`
