@@ -26,6 +26,7 @@ theme:
       - gists/2020-10-07-tty-browser.md
       - gists/blackini.md
       - gists/empty-folders.md
+      - gists/avoiding-sleep.md
       - gists/github-pages-website.md
       - gists/gstlaunch-bins.md
       - gists/integrating-behave-into-pytest.md
