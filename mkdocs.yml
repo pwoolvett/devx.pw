@@ -25,6 +25,9 @@ theme:
   - Gists:
       - gists/2020-10-07-tty-browser.md
       - gists/blackini.md
+      - gists/drytoml.md
+      - gists/dash-or_underscores.md
+      - gists/batch-delete-workflow-runs.md
       - gists/empty-folders.md
       - gists/avoiding-sleep.md
       - gists/github-pages-website.md
@@ -106,5 +109,6 @@ extra_javascript:
   # - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js
 extra_css:
   - css/termynal.css
+  - css/osx-dock.css
   # - css/align.css
   # - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css
